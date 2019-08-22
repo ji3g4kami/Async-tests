@@ -15,6 +15,12 @@
 		40457FB7230BAC790044A455 /* KVOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40457FB6230BAC790044A455 /* KVOTests.swift */; };
 		40457FC3230BB2060044A455 /* LabelObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40457FC2230BB2060044A455 /* LabelObserver.swift */; };
 		40457FC5230BB4CE0044A455 /* ViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40457FC4230BB4CE0044A455 /* ViewControllers.swift */; };
+		404BC2A8230CEA86006AA8B6 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404BC2A7230CEA86006AA8B6 /* NotificationViewController.swift */; };
+		404BC2AA230CEE1A006AA8B6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404BC2A9230CEE1A006AA8B6 /* SettingsViewController.swift */; };
+		404BC2AC230CFE00006AA8B6 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404BC2AB230CFE00006AA8B6 /* DesignableButton.swift */; };
+		404BC2B0230D0338006AA8B6 /* SettingsControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404BC2AF230D0338006AA8B6 /* SettingsControllerTests.swift */; };
+		404BC2B4230D20D1006AA8B6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404BC2B3230D20D1006AA8B6 /* Constants.swift */; };
+		404BC2B6230D2472006AA8B6 /* NotificationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404BC2B5230D2472006AA8B6 /* NotificationViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,12 @@
 		40457FB8230BAC790044A455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40457FC2230BB2060044A455 /* LabelObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelObserver.swift; sourceTree = "<group>"; };
 		40457FC4230BB4CE0044A455 /* ViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllers.swift; sourceTree = "<group>"; };
+		404BC2A7230CEA86006AA8B6 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		404BC2A9230CEE1A006AA8B6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		404BC2AB230CFE00006AA8B6 /* DesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		404BC2AF230D0338006AA8B6 /* SettingsControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsControllerTests.swift; sourceTree = "<group>"; };
+		404BC2B3230D20D1006AA8B6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		404BC2B5230D2472006AA8B6 /* NotificationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +93,9 @@
 		40457FA0230BAC770044A455 /* Asynchronous */ = {
 			isa = PBXGroup;
 			children = (
-				40457FA1230BAC770044A455 /* AppDelegate.swift */,
-				40457FA3230BAC770044A455 /* KVOViewController.swift */,
-				40457FA5230BAC770044A455 /* Main.storyboard */,
-				40457FA8230BAC790044A455 /* Assets.xcassets */,
-				40457FAA230BAC790044A455 /* LaunchScreen.storyboard */,
-				40457FAD230BAC790044A455 /* Info.plist */,
+				404BC2B2230D2010006AA8B6 /* Supporting Files */,
+				404BC2A6230CEA27006AA8B6 /* Controller */,
+				404BC2B1230D2000006AA8B6 /* View */,
 			);
 			path = Asynchronous;
 			sourceTree = "<group>";
@@ -96,6 +105,8 @@
 			children = (
 				40457FC1230BB1670044A455 /* Test Classes */,
 				40457FB6230BAC790044A455 /* KVOTests.swift */,
+				404BC2AF230D0338006AA8B6 /* SettingsControllerTests.swift */,
+				404BC2B5230D2472006AA8B6 /* NotificationViewControllerTests.swift */,
 				40457FB8230BAC790044A455 /* Info.plist */,
 			);
 			path = AsynchronousTests;
@@ -108,6 +119,37 @@
 				40457FC4230BB4CE0044A455 /* ViewControllers.swift */,
 			);
 			path = "Test Classes";
+			sourceTree = "<group>";
+		};
+		404BC2A6230CEA27006AA8B6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				40457FA3230BAC770044A455 /* KVOViewController.swift */,
+				404BC2A7230CEA86006AA8B6 /* NotificationViewController.swift */,
+				404BC2A9230CEE1A006AA8B6 /* SettingsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		404BC2B1230D2000006AA8B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				404BC2AB230CFE00006AA8B6 /* DesignableButton.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		404BC2B2230D2010006AA8B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40457FA5230BAC770044A455 /* Main.storyboard */,
+				40457FAA230BAC790044A455 /* LaunchScreen.storyboard */,
+				40457FA1230BAC770044A455 /* AppDelegate.swift */,
+				40457FA8230BAC790044A455 /* Assets.xcassets */,
+				40457FAD230BAC790044A455 /* Info.plist */,
+				404BC2B3230D20D1006AA8B6 /* Constants.swift */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +255,10 @@
 			files = (
 				40457FA4230BAC770044A455 /* KVOViewController.swift in Sources */,
 				40457FA2230BAC770044A455 /* AppDelegate.swift in Sources */,
+				404BC2A8230CEA86006AA8B6 /* NotificationViewController.swift in Sources */,
+				404BC2AC230CFE00006AA8B6 /* DesignableButton.swift in Sources */,
+				404BC2AA230CEE1A006AA8B6 /* SettingsViewController.swift in Sources */,
+				404BC2B4230D20D1006AA8B6 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				404BC2B0230D0338006AA8B6 /* SettingsControllerTests.swift in Sources */,
+				404BC2B6230D2472006AA8B6 /* NotificationViewControllerTests.swift in Sources */,
 				40457FC3230BB2060044A455 /* LabelObserver.swift in Sources */,
 				40457FB7230BAC790044A455 /* KVOTests.swift in Sources */,
 				40457FC5230BB4CE0044A455 /* ViewControllers.swift in Sources */,
@@ -378,7 +426,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ND2LGZT6B5;
-				INFOPLIST_FILE = Asynchronous/Info.plist;
+				INFOPLIST_FILE = "Asynchronous/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,7 +444,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ND2LGZT6B5;
-				INFOPLIST_FILE = Asynchronous/Info.plist;
+				INFOPLIST_FILE = "Asynchronous/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
