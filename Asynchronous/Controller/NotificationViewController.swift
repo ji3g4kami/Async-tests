@@ -37,11 +37,10 @@ class NotificationViewController: UIViewController {
   }
   
   func setupObservers() {
-    notification.addObserver(forName: Notification.Name.Custom.DarkMode, object: nil, queue: .main) { [unowned self] _ in
-      self.isDarkMode = true
-    }
-    notification.addObserver(forName: Notification.Name.Custom.LightMode, object: nil, queue: .main) { [unowned self] _ in
-      self.isDarkMode = false
+    notification.addObserver(forName: Notification.Name.Custom.Mode, object: nil, queue: .main) { [unowned self] notification in
+      if let info = notification.userInfo, let isDarkMode = info[Notification.Name.Keys.isDarkMode] as? Bool {
+        self.isDarkMode = isDarkMode
+      }
     }
   }
 

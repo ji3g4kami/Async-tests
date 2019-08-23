@@ -19,15 +19,18 @@ class SettingsViewController: UIViewController {
     isDarkMode ? (darkModeSwitch.isOn = true) : (darkModeSwitch.isOn = false)
   }
   
-  func sendModeNotification(_ name: Notification.Name) {
-    NotificationCenter.default.post(name: name, object: self)
+  func sendModeNotification(isDark: Bool) {
+    NotificationCenter.default.post(
+      name: Notification.Name.Custom.Mode,
+      object: self,
+      userInfo: [Notification.Name.Keys.isDarkMode: isDark])
   }
 
   @IBAction func toggleDarkModeSwitch(_ sender: UISwitch) {
     if sender.isOn {
-      sendModeNotification(Notification.Name.Custom.DarkMode)
+      sendModeNotification(isDark: true)
     } else {
-      sendModeNotification(Notification.Name.Custom.LightMode)
+      sendModeNotification(isDark: false)
     }
   }
   

@@ -70,8 +70,7 @@ class SettingsControllerTests: XCTestCase {
   // MARK: - Toggle Switch
   
   func testSwitch_turnOn_generateNotification() {
-    let exp = expectation(forNotification: Notification.Name.Custom.DarkMode, object: sut, handler: nil)
-    exp.expectedFulfillmentCount = 1
+    let exp = expectation(forNotification: Notification.Name.Custom.Mode, object: sut, handler: nil)
     
     // when
     sut.toggleDarkModeSwitch(onSwitch)
@@ -81,8 +80,7 @@ class SettingsControllerTests: XCTestCase {
   }
   
   func testSwitch_turnOff_generateNotification() {
-    let exp = expectation(forNotification: Notification.Name.Custom.LightMode, object: sut, handler: nil)
-    exp.expectedFulfillmentCount = 1
+    let exp = expectation(forNotification: Notification.Name.Custom.Mode, object: sut, handler: nil)
     
     // when
     sut.toggleDarkModeSwitch(offSwitch)

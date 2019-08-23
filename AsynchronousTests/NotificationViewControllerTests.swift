@@ -35,11 +35,11 @@ class NotificationViewControllerTests: XCTestCase {
   
   // MARK: - When
   func whenSettingsViewControllerSendDarkModeNotification(vc: SettingsViewController) {
-    vc.sendModeNotification(Notification.Name.Custom.DarkMode)
+    vc.sendModeNotification(isDark: true)
   }
   
   func whenSettingsViewControllerSendLightModeNotification(vc: SettingsViewController) {
-    vc.sendModeNotification(Notification.Name.Custom.LightMode)
+    vc.sendModeNotification(isDark: false)
   }
   
   // MARK: - Initial
@@ -53,10 +53,11 @@ class NotificationViewControllerTests: XCTestCase {
   func testＷhenReceivedDarkModeNotification_isDarkMode() {
     // given
     let settingsVC = givenSettingsViewController()
-    let exp = expectation(forNotification: Notification.Name.Custom.DarkMode, object: settingsVC, handler: nil)
-    exp.expectedFulfillmentCount = 1
-    sut.notification.addObserver(forName: Notification.Name.Custom.DarkMode, object: settingsVC, queue: nil) { _ in
-      exp.fulfill()
+    let exp = expectation(forNotification: Notification.Name.Custom.Mode, object: settingsVC, handler: nil)
+    var isDarkMode: Bool?
+    sut.notification.addObserver(forName: Notification.Name.Custom.Mode, object: settingsVC, queue: nil) { notification in
+      let info = notification.userInfo
+      isDarkMode = info?[Notification.Name.Keys.isDarkMode] as? Bool
     }
     
     // when
@@ -64,16 +65,20 @@ class NotificationViewControllerTests: XCTestCase {
     
     // then
     wait(for: [exp], timeout: 1)
+    XCTAssertNotNil(isDarkMode)
+    XCTAssertEqual(isDarkMode, true)
     XCTAssertTrue(sut.isDarkMode)
   }
   
   func testWhenReceivedLightModeNotification_isNotDarkMode() {
     // given
     let settingsVC = givenSettingsViewController()
-    let exp = expectation(forNotification: Notification.Name.Custom.LightMode, object: settingsVC, handler: nil)
-    exp.expectedFulfillmentCount = 1
-    sut.notification.addObserver(forName: Notification.Name.Custom.LightMode, object: nil, queue: nil) { _ in
-      exp.fulfill()
+    let exp = expectation(forNotification: Notification.Name.Custom.Mode, object: settingsVC, handler: nil)
+    var isDarkMode: Bool?
+    
+    sut.notification.addObserver(forName: Notification.Name.Custom.Mode, object: nil, queue: nil) { notification in
+      let info = notification.userInfo
+      isDarkMode = info?[Notification.Name.Keys.isDarkMode] as? Bool
     }
     
     // when
@@ -81,6 +86,8 @@ class NotificationViewControllerTests: XCTestCase {
     
     // then
     wait(for: [exp], timeout: 1)
+    XCTAssertNotNil(isDarkMode)
+    XCTAssertEqual(isDarkMode, false)
     XCTAssertFalse(sut.isDarkMode)
   }
 }
