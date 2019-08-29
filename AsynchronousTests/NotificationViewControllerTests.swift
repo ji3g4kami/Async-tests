@@ -73,12 +73,12 @@ class NotificationViewControllerTests: XCTestCase {
   func testWhenReceivedLightModeNotification_isNotDarkMode() {
     // given
     let settingsVC = givenSettingsViewController()
-    let exp = expectation(forNotification: Notification.Name.Custom.Mode, object: settingsVC, handler: nil)
     var isDarkMode: Bool?
-    
-    sut.notification.addObserver(forName: Notification.Name.Custom.Mode, object: nil, queue: nil) { notification in
-      let info = notification.userInfo
-      isDarkMode = info?[Notification.Name.Keys.isDarkMode] as? Bool
+
+    let exp = expectation(forNotification: NSNotification.Name.Custom.Mode, object: settingsVC) { notification in
+        let info = notification.userInfo
+        isDarkMode = info?[Notification.Name.Keys.isDarkMode] as? Bool
+        return isDarkMode == false
     }
     
     // when
